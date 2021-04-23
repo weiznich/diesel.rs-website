@@ -139,7 +139,7 @@ A note on Rust versions:
 <p>Diesel requires Rust 1.31 or later. If you’re following along with this guide, make sure you’re using at least that version of Rust by running <code>rustup update stable</code>.</p>
 </div>
 </aside>
-<h2 id="install-diesel_cli">Install <code>diesel_cli</code></h2>
+<h2 id="initializing-a-new-project">Initializing a new project</h2>
 <p>The first thing we need to do is generate our project.</p>
 <div class="demo__example">
 <div class="demo__example-browser">
@@ -162,6 +162,7 @@ Cargo.toml
 <a class="sourceLine" id="cb2-3" title="3"><span class="dt">dotenv</span> <span class="op">=</span> <span class="st">&quot;0.15.0&quot;</span></a></code></pre></div>
 </div>
 </div>
+<h2 id="installing-diesel-cli">Installing Diesel CLI</h2>
 <p>Diesel provides a separate <a href="https://github.com/diesel-rs/diesel/tree/master/diesel_cli">CLI</a> tool to help manage your project. Since it’s a standalone binary, and doesn’t affect your project’s code directly, we don’t add it to <code>Cargo.toml</code>. Instead, we just install it on our system.</p>
 <div class="demo__example">
 <div class="demo__example-browser">
@@ -184,7 +185,7 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)<
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">cargo</span> install diesel_cli --no-default-features --features postgres</a></code></pre></div>
 </div>
 </aside>
-<h2 id="setup-diesel">Setup Diesel</h2>
+<h2 id="setup-diesel-for-your-project">Setup Diesel for your project</h2>
 <p>We need to tell Diesel where to find our database. We do this by setting the <code>DATABASE_URL</code> environment variable. On our development machines, we’ll likely have multiple projects going, and we don’t want to pollute our environment. We can put the url in a <code>.env</code> file instead.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="bu">echo</span> DATABASE_URL=postgres://username:password@localhost/diesel_demo <span class="op">&gt;</span> .env</a></code></pre></div>
 <p>Now Diesel CLI can set everything up for us.</p>
